@@ -89,10 +89,10 @@ TextureImporter:
       name: tup_s_idle_0
       rect:
         serializedVersion: 2
-        x: 573
-        y: 2685
-        width: 838
-        height: 934
+        x: 574
+        y: 2686
+        width: 836
+        height: 932
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf5759ad55908bb4ca3e1605612355dc
+      spriteID: b394da9b7b00a7146a5bf7cf20717def
       vertices: []
       indices: 
       edges: []
@@ -109,10 +109,10 @@ TextureImporter:
       name: tup_s_idle_1
       rect:
         serializedVersion: 2
-        x: 573
-        y: 637
-        width: 838
-        height: 870
+        x: 574
+        y: 638
+        width: 836
+        height: 868
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf8079ff375d7ed408b80e5d498d6972
+      spriteID: 0bb9de9fd1310324ca6964c726ffb5c6
       vertices: []
       indices: 
       edges: []
