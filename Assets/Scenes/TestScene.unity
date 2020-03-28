@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 220750183}
   - component: {fileID: 220750182}
   - component: {fileID: 220750184}
+  - component: {fileID: 220750186}
   - component: {fileID: 220750185}
   m_Layer: 0
   m_Name: Player
@@ -209,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+  facedir: {x: 0, y: -1}
 --- !u!50 &220750183
 Rigidbody2D:
   serializedVersion: 4
@@ -262,6 +264,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &220750186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220750179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cbe6b1f84b3734ab1362dcf12154dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &429699918
 GameObject:
   m_ObjectHideFlags: 3
@@ -466,7 +480,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -2.0511606e-15, y: 0.00000004458238, z: 1.3739515e-16, w: 1}
+  m_LocalRotation: {x: 2.0511606e-15, y: 0.00000004458238, z: 1.5403454e-16, w: 1}
   m_LocalPosition: {x: 14.655023, y: -7.7589045, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -498,7 +512,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321003763}
-  m_LocalRotation: {x: -0, y: -0, z: 1.5893904e-20, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1.5909536e-20, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -551,10 +565,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1681714914}
   - component: {fileID: 1681714913}
-  - component: {fileID: 1681714915}
+  - component: {fileID: 1681714918}
   - component: {fileID: 1681714917}
   - component: {fileID: 1681714916}
-  - component: {fileID: 1681714918}
+  - component: {fileID: 1681714915}
   m_Layer: 0
   m_Name: Player_f
   m_TagString: Untagged
@@ -657,6 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 0
+  facedir: {x: 0, y: -1}
 --- !u!114 &1681714917
 MonoBehaviour:
   m_ObjectHideFlags: 0
