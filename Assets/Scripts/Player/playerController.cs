@@ -6,10 +6,16 @@ public class playerController : MonoBehaviour {
 	[SerializeField] private float speed; // Speed
 	private Rigidbody2D rigid; // Physics
 	private inputController input; // Input
+	private Animator anim;
+	private int rHash; // Running Hash
+
+
 	void Start () {
 		// Get all components
 		rigid = GetComponent<Rigidbody2D>();
 		input = GetComponent<inputController>();
+		anim = GetComponent<Animator>();
+		rHash = Animator.StringToHash("isRunning");
 	}
 	
 	private void FixedUpdate()
@@ -19,9 +25,16 @@ public class playerController : MonoBehaviour {
 
 	}
 
+	private void SetAnimation()
+	{
+		if(input.x != 0|| input.y != 0) anim.SetBool(rHash,true);
+		else anim.SetBool(rHash,false);
 
+		anim.SetFloat("x",input.facedir.x);
+		anim.SetFloat("y",input.facedir.y);
+	}
 	// Update is called once per frame
 	void Update () {
-		
+		SetAnimation();
 	}
 }
