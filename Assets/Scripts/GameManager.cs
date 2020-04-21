@@ -2,38 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public GameObject respawn;
     public GameObject malePlayer;
     public GameObject femalePlayer;
+    public GameObject player;
     private string selection;
+    
     
     void Start()
     {
+        
         selection = PlayerPrefs.GetString("Seleccion");
         respawn = GameObject.FindGameObjectWithTag("Respawn");
-        
+        //Create Player
         CreatePlayer();
+        
     }
 
+    void OnEnable() {
+        instance = this;
+        
+    }
     private void CreatePlayer()
     {
-        switch(selection)
+         if(!player)
         {
-            case "Male":
-                Instantiate(malePlayer,respawn.transform);
-                break;
+            switch(selection)
+            {
+                case "Male":
+                    player = (GameObject)Instantiate(malePlayer,respawn.transform.position,respawn.transform.rotation);
+                    break;
 
-             case "Female":
-                Instantiate(femalePlayer,respawn.transform);
-                break;
+                case "Female":
+                    player = (GameObject)Instantiate(femalePlayer,respawn.transform.position,respawn.transform.rotation);
+                    break;
+            }
         }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
