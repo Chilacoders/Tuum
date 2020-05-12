@@ -6,11 +6,13 @@ public class inputController : MonoBehaviour {
 
 	[HideInInspector] public float x;
 	[HideInInspector] public float y;
-	[HideInInspector] public Vector2 facedir = new Vector2(0,-1f);	
+	[HideInInspector] public Vector2 facedir = new Vector2(0,-1f);
+	[HideInInspector] public bool action {get;private set;}	
 	// Update is called once per frame
 	void Update () {
 		this.x = Input.GetAxis("Horizontal");
 		this.y = Input.GetAxis("Vertical");
+		action = Input.GetButtonDown("Accion");
 
 		getFace();
 
