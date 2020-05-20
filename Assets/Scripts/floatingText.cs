@@ -12,9 +12,4 @@ public class floatingText : MonoBehaviour
         GetComponent<Renderer>().sortingLayerName = sortingLayer;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

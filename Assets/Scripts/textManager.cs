@@ -6,7 +6,7 @@ public class textManager : MonoBehaviour
 {
     public GameObject[] texts;
     public static textManager instance;
-    private int textqty; // Quantity of texts
+    public int activatedTexts; // Quantity of texts
     
     void OnEnable() {
         instance = this;
@@ -26,9 +26,5 @@ public class textManager : MonoBehaviour
             item.SetActive(false);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

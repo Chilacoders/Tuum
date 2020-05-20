@@ -31,8 +31,30 @@ public class platecollider : MonoBehaviour
             input = other.gameObject.GetComponent<inputController>();
             if(input.action)
             {
-                status = !status;
+                if(status)
+                {
+                    status = false;
+                    ChangeAnswerQuantity();
+                    return;
+                }
+                else if(textManager.instance.activatedTexts < 2)
+                {
+                    status = true;
+                    ChangeAnswerQuantity();
+                }
             }
+        }
+    }
+
+    private void ChangeAnswerQuantity()
+    {
+        if(status)
+        {
+            textManager.instance.activatedTexts++;
+        }
+        else
+        {
+            textManager.instance.activatedTexts--;
         }
     }
 
