@@ -13,6 +13,11 @@ public class sceneManager : MonoBehaviour
 		int actualScene = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene(++actualScene);
 	}
+
+	    public void LoadMenu()
+	{
+		SceneManager.LoadScene(0);
+	}
     
     private void OnTriggerEnter2D(Collider2D other)
 	{

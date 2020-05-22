@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platecollider : MonoBehaviour
+public class chestPlate : MonoBehaviour
 {
     [SerializeField] private bool status;
     [SerializeField] private GameObject txt;
-    private SpriteRenderer spriteR;
-    public Sprite active;
-    public Sprite unactive;
-    
+    [SerializeField] private GameObject chest;
+    private Animator anim;
+    private int openingChestHash;
 
-    private void Start() {
-        spriteR = GetComponent<SpriteRenderer>();
+    private void Start() 
+    {
+        anim = chest.GetComponent<Animator>();
+        openingChestHash = Animator.StringToHash("open");
+        txt.SetActive(false);
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject == GameManager.instance.player )
@@ -26,37 +27,23 @@ public class platecollider : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) 
     {
         inputController input;
+        inventory inv;
         if(other.gameObject == GameManager.instance.player )
         {
             input = other.gameObject.GetComponent<inputController>();
+            inv = other.gameObject.GetComponent<inventory>();
             if(input.action)
             {
-                if(status)
+                if(status && inv.keys > 0)
                 {
                     status = false;
-                    ChangeAnswerQuantity();
-                    return;
-                }
-                else if(textManager.instance.activatedTexts < 2)
-                {
-                    status = true;
-                    ChangeAnswerQuantity();
+                    inv.changeKeys(-1);
+                    anim.SetTrigger(openingChestHash);
                 }
             }
         }
     }
 
-    private void ChangeAnswerQuantity()
-    {
-        if(status)
-        {
-            textManager.instance.activatedTexts++;
-        }
-        else
-        {
-            textManager.instance.activatedTexts--;
-        }
-    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -66,14 +53,4 @@ public class platecollider : MonoBehaviour
         }
     }
 
-    private void Update() {
-        if(status)
-        {
-            spriteR.sprite = active;
-        }
-        else
-        {
-            spriteR.sprite = unactive;
-        }
-    }
 }
